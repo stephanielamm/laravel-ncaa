@@ -39,8 +39,10 @@ Route::get('/games/{id}', function($id) {
 });
 
 Route::post('/games', function(Request $request) {
+  // DB::table('games')->insert(); query builder, but we will use eloquent ORM
   return Response::json($request->all());
 });
+
 
 
 // 4 routes we will use in this project
