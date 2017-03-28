@@ -43,8 +43,6 @@ Route::post('/games', function(Request $request) {
   return Response::json($request->all());
 });
 
-
-
 // 4 routes we will use in this project
 // Route::get($uri, $callback);
 // Route::post($uri, $callback);
