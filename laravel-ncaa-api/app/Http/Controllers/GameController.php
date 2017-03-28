@@ -15,12 +15,16 @@ class GameController extends Controller
   {
     // GET /games
     // lists all games
+    $games = Game::all();
+    return Response::json($games);
   }
   public function create (Request $request)
   {
-    return Response::json($request->all());
     // POST /games
     // creates new game
+    Game::create($request->all());
+    return Response::json(['created'=>true]);
+
   }
   public function show ($id)
   {
