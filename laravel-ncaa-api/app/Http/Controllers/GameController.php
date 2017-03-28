@@ -16,8 +16,9 @@ class GameController extends Controller
     // GET /games
     // lists all games
   }
-  public function create ()
+  public function create (Request $request)
   {
+    return Response::json($request->all());
     // POST /games
     // creates new game
   }

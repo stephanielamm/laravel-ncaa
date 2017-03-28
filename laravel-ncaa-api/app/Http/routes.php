@@ -11,35 +11,10 @@
 |
 */
 use Illuminate\Http\Request;
-
-Route::get('/', 'GameController@foo');
-
-Route::get('games', function () {
-  $myArray = [
-    [
-      'home' => 'UNC',
-      'away' => 'Arkansas',
-      'ptsHome' => 72,
-      'ptsAway' => 65
-    ],
-    [
-      'home' => 'Duke',
-      'away' => 'South Carolina',
-      'ptsHome' => 81,
-      'ptsAway' => 89
-    ]
-  ];
-    return Response::json($myArray);
-});
-
-Route::get('/games/{id}', function($id) {
-  return $id;
-});
-
-Route::post('/games', function(Request $request) {
-  // DB::table('games')->insert(); query builder, but we will use eloquent ORM
-  return Response::json($request->all());
-});
+// Games Routes
+Route::get('/games', 'GameController@index');
+Route::post('/games', 'GameController@create');
+Route::get('/games/{id}', 'GameController@show');
 
 // 4 routes we will use in this project
 // Route::get($uri, $callback);
