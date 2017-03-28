@@ -12,9 +12,7 @@
 */
 use Illuminate\Http\Request;
 
-Route::get('/', function () {
-  // documentation goes here
-});
+Route::get('/', 'GameController@foo');
 
 Route::get('games', function () {
   $myArray = [
