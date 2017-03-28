@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
   // documentation goes here
@@ -32,3 +33,18 @@ Route::get('games', function () {
   ];
     return Response::json($myArray);
 });
+
+Route::get('/games/{id}', function($id) {
+  return $id;
+});
+
+Route::post('/games', function(Request $request) {
+  return Response::json($request->all());
+});
+
+
+// 4 routes we will use in this project
+// Route::get($uri, $callback);
+// Route::post($uri, $callback);
+// Route::put($uri, $callback);
+// Route::delte($uri, $callback);
