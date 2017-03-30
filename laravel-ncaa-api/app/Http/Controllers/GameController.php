@@ -24,18 +24,20 @@ class GameController extends Controller
     // creates new game
     Game::create($request->all());
     return Response::json(['created'=>true]);
-
   }
   public function show ($id)
   {
     // GET /games/$id
     // shows a single game
     $game = Game::find($id);
+    return Response::json($game);
   }
   public function update ($id)
   {
     // PUT /games/$id
     // updates a single game
+    $game = Game::find($id);
+    
   }
   public function destroy ($id)
   {

@@ -15,6 +15,9 @@ use Illuminate\Http\Request;
 Route::get('/games', 'GameController@index');
 Route::post('/games', 'GameController@create');
 Route::get('/games/{id}', 'GameController@show');
+Route::put('/games/{id}', 'GameController@update');
+// Route::delete('/games/{id}', 'GameController@destroy');
+
 
 // 4 routes we will use in this project
 // Route::get($uri, $callback);
