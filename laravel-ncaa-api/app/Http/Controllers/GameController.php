@@ -44,5 +44,8 @@ class GameController extends Controller
   {
     // DELETE /games/$id
     // removes a single game
+    $game = Game::find($id);
+    $game->delete();
+    return Response::json(['deleted => $true']);
   }
 }
