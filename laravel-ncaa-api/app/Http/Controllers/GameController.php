@@ -30,6 +30,7 @@ class GameController extends Controller
   {
     // GET /games/$id
     // shows a single game
+    $game = Game::find($id);
   }
   public function update ($id)
   {
