@@ -32,12 +32,13 @@ class GameController extends Controller
     $game = Game::find($id);
     return Response::json($game);
   }
-  public function update ($id)
+  public function update (Request $request, $id)
   {
     // PUT /games/$id
     // updates a single game
     $game = Game::find($id);
-    
+    $success = $game->update($request->all());
+    return Response::json(['updated => $success']);
   }
   public function destroy ($id)
   {
